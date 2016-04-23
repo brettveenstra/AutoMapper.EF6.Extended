@@ -14,3 +14,9 @@ This project's aim is to extend the capability for **EF6** usage only, hopefully
 * Support Post Projection Transforms after Async calls
 * Support Post Projection Transforms in Async calls
 
+
+
+#### Credits
+
+Orignal credit and license goes to [AutoMapper](http://github.com/AutoMapper) team.  This project is just [standing on the shoulders of giants](https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants).
+
