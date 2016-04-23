@@ -106,6 +106,7 @@
     <Compile Include="Shared\Data\TestingContext.cs" />
     <Compile Include="Shared\Samples\DTO\OrderDetailDTO.cs" />
     <Compile Include="Shared\Samples\Entities\OrderDetailEntity.cs" />
+    <Compile Include="Shared\Samples\Entities\OrderEntity.cs" />
     <Compile Include="Shared\Samples\Services\IShippingStatusProvider.cs" />
     <Compile Include="Shared\Samples\Services\ShippingStatus.cs" />
   </ItemGroup>

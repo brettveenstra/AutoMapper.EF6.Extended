@@ -12,5 +12,6 @@ namespace AutoMapper.EF6.Extended.Tests.Shared.Samples.Entities
     public decimal UnitPrice { get; set; }
     public decimal Qty { get; set; }
     public decimal? DiscountAmount { get; set; }
+    public OrderEntity Order { get; set; }
   }
 }

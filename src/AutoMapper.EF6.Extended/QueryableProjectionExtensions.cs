@@ -21,5 +21,17 @@ namespace AutoMapper.EF6.Extended
 
       return list;
     }
+
+    public static async Task<List<TDestination>> ProjectToListAsync<TDestination>(this IQueryable queryable,
+      IConfigurationProvider config, object parameters, Action<TDestination> postProjectionAction)
+    {
+      var list = await queryable.ProjectTo<TDestination>(config, parameters).DecompileAsync().ToListAsync();
+      if (postProjectionAction != null)
+      {
+        list.ForEach(postProjectionAction);
+      }
+
+      return list;
+    }
   }
 }
