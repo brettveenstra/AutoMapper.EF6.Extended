@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
-using AutoMapper.EF6.Extended.Tests.Shared.Data;
 using AutoMapper.EF6.Extended.Tests.Shared.Samples.DTO;
 using AutoMapper.EF6.Extended.Tests.Shared.Samples.Entities;
 using AutoMapper.EF6.Extended.Tests.Shared.Samples.Services;
@@ -14,6 +13,11 @@ namespace AutoMapper.EF6.Extended.Tests
 {
   public class PostTransformParametersTests
   {
+    public class TestingContext : DbContext
+    {
+      public virtual DbSet<OrderDetailEntity> OrderDetails { get; set; }
+    }
+
     [Fact]
     public async Task ProjectToListAsync_ActionNotNull_ModifiesResults()
     {
