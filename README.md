@@ -3,9 +3,7 @@
 
 ### Purpose
 
-AutoMapper and it's related AutoMapper.EF6 projects are great projects.
-
-This project's aim is to extend the capability for **EF6** usage only, hopefully creating additional functionality via Extension methods without impacting AutoMapper (Core).
+AutoMapper and it's related AutoMapper.EF6 projects are great - this project's aim is to extend the capability for **EF6** usage only, hopefully creating additional functionality via Extension methods without impacting AutoMapper (Core).
 
 ### Backlog
 
