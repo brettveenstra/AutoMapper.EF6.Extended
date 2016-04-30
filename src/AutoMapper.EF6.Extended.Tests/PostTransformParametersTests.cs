@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper.EF6.Extended.Tests.Shared.Samples.DTO;
 using AutoMapper.EF6.Extended.Tests.Shared.Samples.Entities;
@@ -62,13 +63,15 @@ namespace AutoMapper.EF6.Extended.Tests
         s => s.GetStatusFor(It.Is<OrderDetailDTO>(f => f.Discount == 0 && f.LineAmount > 100)))
         .Returns(ShippingStatus.AwaitingPayment);
 
+      var cancellationToken = new CancellationToken();
+
       // Act
       mapperConfiguration.AssertConfigurationIsValid();
 
       var sut =
         await
-          context.Object.OrderDetails.ProjectToListAsync<OrderDetailDTO>(mapperConfiguration,
-            t => { t.ShippingStatus = mockShippingStatusProvider.Object.GetStatusFor(t); });
+          context.Object.OrderDetails.ProjectToListActionAsync<OrderDetailDTO>(mapperConfiguration, 
+            t => { t.ShippingStatus = mockShippingStatusProvider.Object.GetStatusFor(t); }, cancellationToken);
 
       // Assert
       mockShippingStatusProvider.Verify(s => s.GetStatusFor(It.IsAny<OrderDetailDTO>()),
@@ -167,14 +170,16 @@ namespace AutoMapper.EF6.Extended.Tests
         s => s.GetStatusFor(It.Is<OrderDetailDTO>(f => f.Discount == 0 && f.LineAmount > 100)))
         .Returns(ShippingStatus.AwaitingPayment);
 
+      var cancellationToken = new CancellationToken();
+
       // Act
       mapperConfiguration.AssertConfigurationIsValid();
 
       var sut =
         await
-          context.Object.OrderDetails.ProjectToListAsync<OrderDetailDTO>(mapperConfiguration,
-            new {effectiveDate = DateTime.Now},
-            t => { t.ShippingStatus = mockShippingStatusProvider.Object.GetStatusFor(t); });
+          context.Object.OrderDetails.ProjectToListActionAsync<OrderDetailDTO>(mapperConfiguration,
+            t => { t.ShippingStatus = mockShippingStatusProvider.Object.GetStatusFor(t); },
+            new {effectiveDate = DateTime.Now}, cancellationToken);
 
       // Assert
       mockShippingStatusProvider.Verify(s => s.GetStatusFor(It.IsAny<OrderDetailDTO>()),

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper.EF6.Extended.Tests.Shared.Encryption;
 using AutoMapper.EF6.Extended.Tests.Shared.Samples.DTO;
@@ -86,13 +87,14 @@ namespace AutoMapper.EF6.Extended.Tests
                 s => s.BirthDay != null ? (int?) ((effectiveDate - s.BirthDay.Value).TotalDays/365.25) : null as int?));
       });
 
+      var cancellationToken = new CancellationToken();
+
       // Act
       mapperConfiguration.AssertConfigurationIsValid();
 
       var sut =
         await
-          context.Object.Patients.ProjectToListAsync<PatientTransformingDTO>(mapperConfiguration,
-            new {effectiveDate = DateTime.Now});
+          context.Object.Patients.ProjectToListTransformAsync<PatientTransformingDTO>(mapperConfiguration, new {effectiveDate = DateTime.Now}, cancellationToken);
 
       // Assert
       sut.Count.ShouldEqual(data.Count);
