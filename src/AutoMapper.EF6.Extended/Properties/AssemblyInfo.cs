@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AutoMapper.EF6.Extended")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Extended EF6 functionality for AutoMapper project, easing 2-stage transforms and custom Actions after projection, with full async support.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Brett Veenstra")]
 [assembly: AssemblyProduct("AutoMapper.EF6.Extended")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+// [assembly: AssemblyVersion("0.0.1")]
+[assembly: AssemblyVersion("0.0.1")]
+[assembly: AssemblyFileVersion("0.0.1")]

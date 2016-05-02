@@ -1,0 +1,29 @@
+{
+  "name": "automapper.ef6.extended",
+  "version": "0.0.1",
+  "description": "Extended EF6 functionality for AutoMapper project, easing 2-stage transforms and custom Actions after projection, with full async support.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/halfbakedbits/AutoMapper.EF6.Extended.git"
+  },
+  "author": "Brett Veenstra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halfbakedbits/AutoMapper.EF6.Extended/issues"
+  },
+  "homepage": "https://github.com/halfbakedbits/AutoMapper.EF6.Extended#readme",
+  "devDependencies": {
+    "fs": "0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-dotnet-assembly-info": "^0.1.11",
+    "gulp-msbuild": "^0.3.2",
+    "gulp-nuget": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-xunit-runner": "^0.1.1",
+    "request": "^2.72.0",
+    "run-sequence": "^1.1.5"
+  }
+}
