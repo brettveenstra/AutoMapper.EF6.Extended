@@ -1,5 +1,9 @@
 # AutoMapper.EF6.Extended
 
+[![Build status](https://ci.appveyor.com/api/projects/status/jd2nfe2hvwb6oh40/branch/master?svg=true)](https://ci.appveyor.com/project/brettveenstra/automapper-ef6-extended/branch/master)
+[![NuGet](https://img.shields.io/nuget/v/AutoMapper.EF6.Extended.svg)](https://www.nuget.org/packages/AutoMapper.EF6.Extended/)
+[![NuGet Pre Release](https://img.shields.io/nuget/vpre/AutoMapper.EF6.Extended.svg)](https://www.nuget.org/packages/AutoMapper.EF6.Extended/)
+
 
 ### Purpose
 
