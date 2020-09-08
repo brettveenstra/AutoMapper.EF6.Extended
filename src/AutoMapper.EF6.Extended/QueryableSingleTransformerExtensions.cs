@@ -1,10 +1,10 @@
-using System.Data.Entity;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
 using DelegateDecompiler;
-using DelegateDecompiler.EntityFramework;
+using DelegateDecompiler.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutoMapper.EF6.Extended
 {
